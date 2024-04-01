@@ -1,0 +1,70 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Platforms>x64;ARM64</Platforms>
+		<RuntimeIdentifiers>win-x64;win-arm64;osx-x64;osx-arm64;linux-x64;linux-arm64</RuntimeIdentifiers>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseArtifactsOutput>true</UseArtifactsOutput>
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<SolutionDir Condition="'$(SolutionDir)' == ''">$(MSBuildThisFileDirectory)</SolutionDir>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetOS)' == '' And $([MSBuild]::IsOSPlatform('Windows'))">
+		<TargetOS>Windows</TargetOS>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetOS)' == '' And $([MSBuild]::IsOSPlatform('OSX'))">
+		<TargetOS>macOS</TargetOS>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetOS)' == '' And $([MSBuild]::IsOSPlatform('Linux'))">
+		<TargetOS>Linux</TargetOS>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetOS)' == 'Windows'">
+		<DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetOS)' == 'macOS'">
+		<DefineConstants>$(DefineConstants);MACOS</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetOS)' == 'Linux'">
+		<DefineConstants>$(DefineConstants);LINUX</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<SelfContained>true</SelfContained>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishTrimmed>true</PublishTrimmed>
+		<TrimMode>partial</TrimMode>
+		<SuppressTrimAnalysisWarnings>true</SuppressTrimAnalysisWarnings>
+		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+		<EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
+		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+		<DebuggerSupport>false</DebuggerSupport>
+		<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>
+		<EventSourceSupport>false</EventSourceSupport>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+		<StackTraceSupport>false</StackTraceSupport>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="UtilLux.Tests" />
+	</ItemGroup>
+</Project>
