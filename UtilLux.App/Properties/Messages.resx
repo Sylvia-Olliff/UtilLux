@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AddKeyFormat" xml:space="preserve">
+    <value>Add {0}</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CheckForUpdates" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created by Sylvia Beck</value>
+  </data>
+  <data name="CurrentPositionFormat" xml:space="preserve">
+    <value>Current position: {0}</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="GetNewVersion" xml:space="preserve">
+    <value>Get new version</value>
+  </data>
+  <data name="GetNewVersionHint" xml:space="preserve">
+    <value>Don't forget to stop the UtilLux service before installing the new version</value>
+  </data>
+  <data name="KeyCode0" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="KeyCode1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="KeyCode2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="KeyCode3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="KeyCode4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="KeyCode5" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="KeyCode6" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="KeyCode7" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="KeyCode8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="KeyCode9" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="KeyCodeA" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="KeyCodeB" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="KeyCodeBackQuote" xml:space="preserve">
+    <value>`</value>
+  </data>
+  <data name="KeyCodeBackslash" xml:space="preserve">
+    <value>\</value>
+  </data>
+  <data name="KeyCodeC" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="KeyCodeComma" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="KeyCodeD" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="KeyCodeE" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="KeyCodeEquals" xml:space="preserve">
+    <value>=</value>
+  </data>
+  <data name="KeyCodeF" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="KeyCodeF1" xml:space="preserve">
+    <value>F1</value>
+  </data>
+  <data name="KeyCodeF10" xml:space="preserve">
+    <value>F10</value>
+  </data>
+  <data name="KeyCodeF11" xml:space="preserve">
+    <value>F11</value>
+  </data>
+  <data name="KeyCodeF12" xml:space="preserve">
+    <value>F12</value>
+  </data>
+  <data name="KeyCodeF2" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="KeyCodeF3" xml:space="preserve">
+    <value>F3</value>
+  </data>
+  <data name="KeyCodeF4" xml:space="preserve">
+    <value>F4</value>
+  </data>
+  <data name="KeyCodeF5" xml:space="preserve">
+    <value>F5</value>
+  </data>
+  <data name="KeyCodeF6" xml:space="preserve">
+    <value>F6</value>
+  </data>
+  <data name="KeyCodeF7" xml:space="preserve">
+    <value>F7</value>
+  </data>
+  <data name="KeyCodeF8" xml:space="preserve">
+    <value>F8</value>
+  </data>
+  <data name="KeyCodeF9" xml:space="preserve">
+    <value>F9</value>
+  </data>
+  <data name="KeyCodeG" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="KeyCodeH" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="KeyCodeI" xml:space="preserve">
+    <value>I</value>
+  </data>
+  <data name="KeyCodeJ" xml:space="preserve">
+    <value>J</value>
+  </data>
+  <data name="KeyCodeK" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="KeyCodeL" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="KeyCodeM" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="KeyCodeMinus" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="KeyCodeN" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="KeyCodeO" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="KeyCodeP" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="KeyCodePeriod" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="KeyCodeQ" xml:space="preserve">
+    <value>Q</value>
+  </data>
+  <data name="KeyCodeQuote" xml:space="preserve">
+    <value>'</value>
+  </data>
+  <data name="KeyCodeR" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="KeyCodeS" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="KeyCodeSemicolon" xml:space="preserve">
+    <value>;</value>
+  </data>
+  <data name="KeyCodeSlash" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="KeyCodeT" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="KeyCodeU" xml:space="preserve">
+    <value>U</value>
+  </data>
+  <data name="KeyCodeV" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="KeyCodeW" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="KeyCodeX" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="KeyCodeY" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="KeyCodeZ" xml:space="preserve">
+    <value>Z</value>
+  </data>
+  <data name="Kill" xml:space="preserve">
+    <value>Kill</value>
+  </data>
+  <data name="ModifierKeyAlt" xml:space="preserve">
+    <value>Any Alt</value>
+  </data>
+  <data name="ModifierKeyCommand" xml:space="preserve">
+    <value>Any Command</value>
+  </data>
+  <data name="ModifierKeyCtrl" xml:space="preserve">
+    <value>Any Ctrl</value>
+  </data>
+  <data name="ModifierKeyLeftAlt" xml:space="preserve">
+    <value>Left Alt</value>
+  </data>
+  <data name="ModifierKeyLeftCommand" xml:space="preserve">
+    <value>Left Command</value>
+  </data>
+  <data name="ModifierKeyLeftCtrl" xml:space="preserve">
+    <value>Left Ctrl</value>
+  </data>
+  <data name="ModifierKeyLeftOption" xml:space="preserve">
+    <value>Left Option</value>
+  </data>
+  <data name="ModifierKeyLeftShift" xml:space="preserve">
+    <value>Left Shift</value>
+  </data>
+  <data name="ModifierKeyLeftSuper" xml:space="preserve">
+    <value>Left Super</value>
+  </data>
+  <data name="ModifierKeyLeftWin" xml:space="preserve">
+    <value>Left Win</value>
+  </data>
+  <data name="ModifierKeyNone" xml:space="preserve">
+    <value>&lt;no key&gt;</value>
+  </data>
+  <data name="ModifierKeyOption" xml:space="preserve">
+    <value>Any Option</value>
+  </data>
+  <data name="ModifierKeyRightAlt" xml:space="preserve">
+    <value>Right Alt</value>
+  </data>
+  <data name="ModifierKeyRightCommand" xml:space="preserve">
+    <value>Right Command</value>
+  </data>
+  <data name="ModifierKeyRightCtrl" xml:space="preserve">
+    <value>Right Ctrl</value>
+  </data>
+  <data name="ModifierKeyRightOption" xml:space="preserve">
+    <value>Right Option</value>
+  </data>
+  <data name="ModifierKeyRightShift" xml:space="preserve">
+    <value>Right Shift</value>
+  </data>
+  <data name="ModifierKeyRightSuper" xml:space="preserve">
+    <value>Right Super</value>
+  </data>
+  <data name="ModifierKeyRightWin" xml:space="preserve">
+    <value>Right Win</value>
+  </data>
+  <data name="ModifierKeysAreSame" xml:space="preserve">
+    <value>Modifier keys must be different in each row</value>
+  </data>
+  <data name="ModifierKeySeparator" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="ModifierKeyShift" xml:space="preserve">
+    <value>Any Shift</value>
+  </data>
+  <data name="ModifierKeySuper" xml:space="preserve">
+    <value>Any Super</value>
+  </data>
+  <data name="ModifierKeyWin" xml:space="preserve">
+    <value>Any Win</value>
+  </data>
+  <data name="Modifiers" xml:space="preserve">
+    <value>Modifiers</value>
+  </data>
+  <data name="NewVersionAvailable" xml:space="preserve">
+    <value>New version available: {0}</value>
+  </data>
+  <data name="NoNewVersions" xml:space="preserve">
+    <value>You have the latest version!</value>
+  </data>
+  <data name="NumberBoxHint" xml:space="preserve">
+    <value>If you input the number then press 'Enter' to apply changes</value>
+  </data>
+  <data name="Preferences" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="Sandbox" xml:space="preserve">
+    <value>Sandbox</value>
+  </data>
+  <data name="SandboxInfo" xml:space="preserve">
+    <value>Sandbox is a where you can test out your changes in settings and preferences</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SleepMax" xml:space="preserve">
+    <value>Sleep Maximum Keys</value>
+  </data>
+  <data name="SleepMaxExecutionKey" xml:space="preserve">
+    <value>Sleep Max Key</value>
+  </data>
+  <data name="SleepMaxValue" xml:space="preserve">
+    <value>Maximum Sleep Time</value>
+  </data>
+  <data name="SleepMin" xml:space="preserve">
+    <value>Sleep Minimum Keys</value>
+  </data>
+  <data name="SleepMinExecutionKey" xml:space="preserve">
+    <value>Sleep Min Key</value>
+  </data>
+  <data name="SleepMinValue" xml:space="preserve">
+    <value>Minimum Sleep Time</value>
+  </data>
+  <data name="SleepSettings" xml:space="preserve">
+    <value>Sleep Settings:</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="StartOnLogIn" xml:space="preserve">
+    <value>Start the service when you log in</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="UtilLux" xml:space="preserve">
+    <value>UtilLux</value>
+  </data>
+  <data name="UtilLuxServiceNotRunning" xml:space="preserve">
+    <value>The UtilLux service is not running</value>
+  </data>
+  <data name="UtilLuxServiceRunning" xml:space="preserve">
+    <value>The UtilLux service is running</value>
+  </data>
+  <data name="UtilLuxServiceShuttingDown" xml:space="preserve">
+    <value>The UtilLux service is shutting down</value>
+  </data>
+  <data name="ValidationNameEmpty" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+  <data name="VersionFormat" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="ViewDocs" xml:space="preserve">
+    <value>View the docs</value>
+  </data>
+  <data name="WindowTitle" xml:space="preserve">
+    <value>UtilLux Settings</value>
+  </data>
+</root>

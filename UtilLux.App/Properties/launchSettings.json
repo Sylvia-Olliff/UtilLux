@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UtilLux.App": {
+      "commandName": "Project",
+      "workingDirectory": "$(TargetDir)"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:UtilLux.App.Views"
+             xmlns:l="using:UtilLux.App.Localization"
+             x:Class="UtilLux.App.Views.MainContentView">
+	<TabControl>
+		<TabItem x:Name="PreferencesTabItem" Header="{l:Translate Preferences}" />
+		<TabItem x:Name="SandboxTabItem" Header="{l:Translate Sandbox}">
+			<local:SandboxView />
+		</TabItem>
+		<TabItem x:Name="AboutTabItem" Header="{l:Translate About}" />
+	</TabControl>
+</UserControl>

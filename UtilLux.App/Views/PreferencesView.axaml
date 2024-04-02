@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:c="using:UtilLux.App.Controls"
+             xmlns:l="using:UtilLux.App.Localization"
+             x:Class="UtilLux.App.Views.PreferencesView">
+	<DockPanel>
+		<StackPanel x:Name="ActionPanel" DockPanel.Dock="Bottom">
+			<Button x:Name="SaveButton" Content="{l:Translate Save}" Classes="accent" />
+			<Button x:Name="CancelButton" Content="{l:Translate Cancel}" />
+		</StackPanel>
+
+		<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                      VerticalAlignment="Stretch">
+			<StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+					<CheckBox x:Name="StartupCheckBox" Classes="FormControl"
+                              Content="{l:Translate StartOnLogIn}" />
+				</StackPanel>
+
+				<Grid RowDefinitions="Auto,10,Auto,10,Auto" Margin="10"
+                      ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+					
+					<TextBlock Grid.Column="0" Grid.Row="0" Text="{l:Translate SleepMin}" />
+					<ComboBox x:Name="SleepMinFirstComboBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"
+                              Classes="FormControl ModifierKey" />
+					<TextBlock Grid.Row="0" Grid.Column="2" Text="{l:Translate ModifierKeySeparator}" Classes="Label" />
+					<ComboBox x:Name="SleepMinSecondComboBox" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch"
+                              Classes="FormControl ModifierKey" />
+					<TextBlock Grid.Row="0" Grid.Column="4" Text="{l:Translate ModifierKeySeparator}" Classes="Label" />
+					<ComboBox x:Name="SleepMinThirdComboBox" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Stretch"
+                              Classes="FormControl ModifierKey" />
+
+					<TextBlock Grid.Row="0" Grid.Column="6" Text="{l:Translate SleepMinValue}" Classes="Label" />
+					<ui:NumberBox x:Name="SleepMinValueBox" Grid.Row="0" Grid.Column="7" Classes="FormControl"
+                                  Minimum="1" Maximum="30" />
+
+					<TextBlock Grid.Column="0" Grid.Row="2" Text="{l:Translate SleepMax}" />
+					<ComboBox x:Name="SleepMaxFirstComboBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch"
+                              Classes="FormControl ModifierKey" />
+					<TextBlock Grid.Row="0" Grid.Column="2" Text="{l:Translate ModifierKeySeparator}" Classes="Label" />
+					<ComboBox x:Name="SleepMaxSecondComboBox" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch"
+                              Classes="FormControl ModifierKey" />
+					<TextBlock Grid.Row="0" Grid.Column="4" Text="{l:Translate ModifierKeySeparator}" Classes="Label" />
+					<ComboBox x:Name="SleepMaxThirdComboBox" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Stretch"
+                              Classes="FormControl ModifierKey" />
+
+					<TextBlock Grid.Row="2" Grid.Column="6" Text="{l:Translate SleepMaxValue}" Classes="Label" />
+					<ui:NumberBox x:Name="SleepMaxValueBox" Grid.Row="2" Grid.Column="7" Classes="FormControl"
+                                  Minimum="1" Maximum="30" />
+					
+					<TextBlock Grid.Row="4" Grid.Column="0" Text="{l:Translate SleepMinExecutionKey}" />
+					<ComboBox x:Name="SleepMinExecutionKeyComboBox" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch"
+							  Classes="FormControl KeyCode" />
+					<TextBlock Grid.Row="4" Grid.Column="2" Text="{l:Translate SleepMaxExecutionKey}" Classes="Label" />
+					<ComboBox x:Name="SleepMaxExecutionKeyComboBox" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch"
+							  Classes="FormControl KeyCode" />
+				</Grid>
+
+				<TextBlock x:Name="ModifierKeysValidationTextBlock" Classes="Error" />
+			</StackPanel>
+		</ScrollViewer>
+	</DockPanel>
+</UserControl>

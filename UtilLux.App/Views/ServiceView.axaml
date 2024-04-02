@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="using:UtilLux.App.Localization"
+             x:Class="UtilLux.App.Views.ServiceView">
+	<Border>
+		<StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.Status">
+					<Setter Property="VerticalAlignment" Value="Center" />
+					<Setter Property="Margin" Value="10" />
+					<Setter Property="Width" Value="350" />
+				</Style>
+			</StackPanel.Styles>
+
+			<TextBlock x:Name="ServiceRunningTextBlock" Classes="Status"
+                       Text="{l:Translate UtilLuxServiceRunning}" />
+
+			<TextBlock x:Name="ServiceNotRunningTextBlock" Classes="Status"
+                       Text="{l:Translate UtilLuxServiceNotRunning}" />
+
+			<TextBlock x:Name="ServiceShuttingDownTextBlock" Classes="Status"
+                       Text="{l:Translate UtilLuxServiceShuttingDown}" />
+
+			<Button x:Name="StartServiceButton" Content="{l:Translate Start}" Classes="accent" />
+			<Button x:Name="StopServiceButton" Content="{l:Translate Stop}" />
+			<Button x:Name="KillServiceButton" Content="{l:Translate Kill}" />
+		</StackPanel>
+	</Border>
+</UserControl>
