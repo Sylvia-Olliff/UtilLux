@@ -69,12 +69,12 @@ public partial class Build
         .DependsOn(this.Compile)
         .Executes(() =>
         {
-            /*Log.Information("Running tests in the project {Name}", this.Solution.UtilLux_Tests.Name);
+            Log.Information("Running tests in the project {Name}", this.Solution.UtilLux_Tests.Name);
 
             DotNetTest(s => s
                 .SetProjectFile(this.Solution.UtilLux_Tests)
                 .SetConfiguration(this.Configuration)
-                .SetNoRestore(true));*/
+                .SetNoRestore(true));
         });
 
     public Target Publish => t => t

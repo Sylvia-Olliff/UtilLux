@@ -11,14 +11,18 @@ using UtilLux.Core.Settings.Sleep;
 using UtilLux.Core.Keyboard;
 using SharpHook.Native;
 using System.Reflection;
+using System.IO.Abstractions;
 
 namespace UtilLux.Core.Services.Settings;
 
 internal sealed class JsonSettingsService(
     IOptions<GlobalSettings> globalSettings,
+    IFileSystem fileSystem,
     ILogger<JsonSettingsService> logger) : IAppSettingsService
 {
-    private readonly FileInfo file = new(Environment.ExpandEnvironmentVariables(globalSettings.Value.SettingsFilePath));
+    private readonly IFileInfo file = fileSystem.FileInfo.New(
+        Environment.ExpandEnvironmentVariables(globalSettings.Value.SettingsFilePath));
+
     private readonly Subject<Unit> settingsInvalidated = new();
 
     private AppSettings? appSettings;
@@ -131,5 +135,5 @@ internal sealed class JsonSettingsService(
         };
 
     private Version GetAppVersion() =>
-        Assembly.GetEntryAssembly()?.GetName().Version ?? new Version(0, 0);
+        Assembly.GetExecutingAssembly()?.GetName().Version ?? new Version(0, 0);
 }

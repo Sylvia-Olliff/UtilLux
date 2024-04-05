@@ -49,7 +49,7 @@ public partial class Build
 
         if (includeTests)
         {
-            // yield return this.Solution.UtilLux_Tests;
+            yield return this.Solution.UtilLux_Tests;
         }
 
         if (includeInstaller)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SharpHook;
 using SharpHook.Reactive;
+using System.IO.Abstractions;
 using UtilLux.Core.Infrastructure;
 using UtilLux.Core.Services.Hook;
 using UtilLux.Core.Services.Power;
@@ -16,6 +17,7 @@ public static class ServiceExtensions
             .AddSingleton<IKeyboardHookService, SharpHookService>()
             .AddSingleton<IAppSettingsService, JsonSettingsService>()
             .AddSingleton<INamedPipeService, NamedPipeService>()
-            .AddSingleton<ISingleInstanceService, SingleInstanceService>();
+            .AddSingleton<ISingleInstanceService, SingleInstanceService>()
+            .AddSingleton<IFileSystem, FileSystem>();
             
 }
