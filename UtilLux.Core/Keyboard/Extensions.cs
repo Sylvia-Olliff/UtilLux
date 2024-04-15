@@ -18,6 +18,20 @@ public static class Extensions
             _ => null
         };
 
+    public static KeyCode? ToKeyCode(this ModifierMask modifierMask) =>
+        modifierMask switch
+        {
+            ModifierMask.LeftCtrl => KeyCode.VcLeftControl,
+            ModifierMask.RightCtrl => KeyCode.VcRightControl,
+            ModifierMask.LeftShift => KeyCode.VcLeftShift,
+            ModifierMask.RightShift => KeyCode.VcRightShift,
+            ModifierMask.LeftAlt => KeyCode.VcLeftAlt,
+            ModifierMask.RightAlt => KeyCode.VcRightAlt,
+            ModifierMask.LeftMeta => KeyCode.VcLeftMeta,
+            ModifierMask.RightMeta => KeyCode.VcRightMeta,
+            _ => null
+        };
+
     public static bool IsSubsetKeyOf(this ModifierMask subKey, ModifierMask superKey) =>
         superKey.Contains(subKey, ModifierMask.Ctrl) &&
         superKey.Contains(subKey, ModifierMask.Shift) &&
