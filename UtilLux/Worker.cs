@@ -6,6 +6,8 @@ using UtilLux.Core.Services.Hook;
 using UtilLux.Core.Services.Power;
 using UtilLux.Core.Services.Settings;
 using UtilLux.Core.Settings.Sleep;
+using UtilLux.Core.Settings.OpenFolder;
+using UtilLux.Core.Commands.OpenFolder;
 
 namespace UtilLux;
 
@@ -55,10 +57,23 @@ public class Worker(
     {
         logger.LogDebug("Registering hotkeys from settings");
         var settings = await settingsService.GetAppSettings(strict: true);
-        this.RegisterHotKeys(settings.SleepSettings);
+        this.RegisterSleepHotKeys(settings.SleepSettings);
+        this.RegisterOpenFolderHotKeys(settings.OpenFolderSettings);
     }
 
-    private void RegisterHotKeys(SleepSettings settings)
+    private void RegisterOpenFolderHotKeys(OpenFolderSettings settings)
+    {
+        settings.KeyCombos.ForEach(entry =>
+        {
+            var openFolderHandler = new OpenFolderCommand(
+                new CommandTrigger()               {
+                    Trigger = entry.Key,
+                    Data = entry.Value
+                }, keyboardHookService);
+        });
+    }
+
+    private void RegisterSleepHotKeys(SleepSettings settings)
     {
         var sleepHandlerMin = new EditScreenSleepCommand(
             new CommandTrigger()

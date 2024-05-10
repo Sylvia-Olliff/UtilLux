@@ -86,6 +86,8 @@ public abstract class ReactiveForm<TModel, TForm> : ReactiveValidationObject, IR
         this.validationsToTrack.Add(validation.StartWith(false));
 
     protected IObservable<bool> IsCollectionChanged<TOtherForm, TOtherModel>(
+        Func<PreferencesViewModel, List<ReadOnlyObservableCollection<SharpHook.Native.ModifierMask>>> value,
+        Func<PreferencesViewModel, Dictionary<UtilLux.Core.Keyboard.KeyCombo, UtilLux.Core.Commands.OpenFolder.OpenFolderData>> value1,
         Expression<Func<TForm, ReadOnlyObservableCollection<TOtherForm>>> property,
         Func<TForm, ICollection<TOtherModel>> itemCollection)
         where TOtherForm : ReactiveForm<TOtherModel, TOtherForm>

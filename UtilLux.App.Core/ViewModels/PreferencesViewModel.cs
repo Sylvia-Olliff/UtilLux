@@ -18,8 +18,12 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
     private readonly SourceList<ModifierMask> sleepMinKeysSource = new();
     private readonly SourceList<ModifierMask> sleepMaxKeysSource = new();
 
+    private readonly List<SourceList<ModifierMask>> openFolderKeysSource = [];
+
     private readonly ReadOnlyObservableCollection<ModifierMask> sleepMinKeys;
     private readonly ReadOnlyObservableCollection<ModifierMask> sleepMaxKeys;
+
+    private readonly List<ReadOnlyObservableCollection<ModifierMask>> openFolderKeys = [];
 
     public PreferencesViewModel(
         PreferenceModel preferenceModel,
@@ -37,6 +41,18 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
             .Bind(out this.sleepMaxKeys)
             .Subscribe();
 
+
+        this.PreferenceModel.OpenFolderSettings.KeyCombos.ForEach(entry =>
+        {
+            var sourceList = new SourceList<ModifierMask>();
+            ReadOnlyObservableCollection<ModifierMask> openFolderKey;
+            sourceList.Connect()
+                .Bind(out openFolderKey)
+                .Subscribe();
+            openFolderKeys.Add(openFolderKey);
+            openFolderKeysSource.Add(sourceList);
+        });
+
         this.BindKeys();
 
 
@@ -53,6 +69,9 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
 
     [Reactive]
     public bool ShowConverter { get; set; }
+
+    [Reactive]
+    public List<Tuple<ModifierMask, ModifierMask, ModifierMask>> OpenFolderModifierSets { get; set; } = [];
 
     [Reactive]
     public ModifierMask SleepMinModifierFirst { get; set; }
@@ -103,6 +122,8 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
         this.TrackChanges(vm => vm.SleepMinKeyCode, vm => vm.PreferenceModel.SleepSettings.KeyCombo.ExecutionKey);
         this.TrackChanges(vm => vm.SleepMaxKeyCode, vm => vm.PreferenceModel.SleepSettings.MaxKeyCombo.ExecutionKey);
 
+        this.TrackChanges(vm => vm.OpenFolderModifierSets, vm => vm.PreferenceModel.OpenFolderSettings.KeyCombos);
+
         base.EnableChangeTracking();
     }
 
@@ -115,6 +136,14 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
             MinData = new SleepData(this.SleepMinValue),
             MaxKeyCombo = new KeyCombo([.. this.sleepMaxKeys], this.SleepMaxKeyCode),
             MaxData = new SleepData(this.SleepMaxValue)
+        };
+        this.PreferenceModel.OpenFolderSettings = this.PreferenceModel.OpenFolderSettings with
+        {
+            KeyCombos = new Dictionary<KeyCombo, UtilLux.Core.Commands.OpenFolder.OpenFolderData>(
+                            this.openFolderKeys
+                            .Select((keys, index) => new KeyValuePair<KeyCombo, UtilLux.Core.Commands.OpenFolder.OpenFolderData>(
+                                new KeyCombo([.. keys], this.PreferenceModel.OpenFolderSettings.KeyCombos.ElementAt(index).Key.ExecutionKey),
+                                this.PreferenceModel.OpenFolderSettings.KeyCombos.ElementAt(index).Value)))
         };
 
         return Task.FromResult(this.PreferenceModel);

@@ -12,6 +12,7 @@ using UtilLux.Core.Keyboard;
 using SharpHook.Native;
 using System.Reflection;
 using System.IO.Abstractions;
+using UtilLux.Core.Settings.OpenFolder;
 
 namespace UtilLux.Core.Services.Settings;
 
@@ -131,6 +132,18 @@ internal sealed class JsonSettingsService(
 
                 MinData = new Commands.Sleep.SleepData(5),
                 MaxData = new Commands.Sleep.SleepData(15)
+            },
+            OpenFolderSettings = new OpenFolderSettings()
+            {
+                KeyCombos = new Dictionary<KeyCombo, Commands.OpenFolder.OpenFolderData>()
+                {
+                    {
+                        new KeyCombo(
+                            [ModifierMask.LeftCtrl],
+                            KeyCode.VcO),
+                        new Commands.OpenFolder.OpenFolderData("C:\\")
+                    }
+                }
             }
         };
 
