@@ -45,9 +45,8 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
         this.PreferenceModel.OpenFolderSettings.KeyCombos.ForEach(entry =>
         {
             var sourceList = new SourceList<ModifierMask>();
-            ReadOnlyObservableCollection<ModifierMask> openFolderKey;
             sourceList.Connect()
-                .Bind(out openFolderKey)
+                .Bind(out ReadOnlyObservableCollection<ModifierMask> openFolderKey)
                 .Subscribe();
             openFolderKeys.Add(openFolderKey);
             openFolderKeysSource.Add(sourceList);
@@ -122,7 +121,9 @@ public sealed class PreferencesViewModel : ReactiveForm<PreferenceModel, Prefere
         this.TrackChanges(vm => vm.SleepMinKeyCode, vm => vm.PreferenceModel.SleepSettings.KeyCombo.ExecutionKey);
         this.TrackChanges(vm => vm.SleepMaxKeyCode, vm => vm.PreferenceModel.SleepSettings.MaxKeyCombo.ExecutionKey);
 
-        this.TrackChanges(vm => vm.OpenFolderModifierSets, vm => vm.PreferenceModel.OpenFolderSettings.KeyCombos);
+        this.TrackChanges(this.IsCollectionChangedSimple(
+            vm => vm.OpenFolderModifierSets, vm => (ICollection<Tuple<ModifierMask, ModifierMask, ModifierMask>>)vm.PreferenceModel.OpenFolderSettings.KeyCombos.));
+        //this.TrackChanges(vm => vm.OpenFolderModifierSets, vm => vm.PreferenceModel.OpenFolderSettings.KeyCombos);
 
         base.EnableChangeTracking();
     }
